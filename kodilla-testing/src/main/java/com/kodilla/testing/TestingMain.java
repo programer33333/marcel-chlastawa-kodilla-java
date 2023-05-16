@@ -15,24 +15,15 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
-        Calculator newCalculator = new Calculator(8,7);
+        Calculator newCalculator = new Calculator();
 
-        int addMethod = newCalculator.add();
-
-        if (addMethod == (newCalculator.getA() + newCalculator.getB())) {
-            System.out.println("Test Add method ok");
+        int addMethod = newCalculator.add(8,7);
+        int subatractMethod = newCalculator.subtract(5,4);
+        if(addMethod == 15 && subatractMethod == 1) {
+            System.out.println("Calculator test ok");
         } else {
-            System.out.println("Add Method Error!");
+            System.out.println("Calculator has error!");
         }
-
-        int substractMethod = newCalculator.subtract();
-
-        if (substractMethod == (newCalculator.getA() - newCalculator.getB())) {
-            System.out.println("Test substract method ok");
-        } else {
-            System.out.println("Subastract method Error!");
-        }
-
     }
 }
 
