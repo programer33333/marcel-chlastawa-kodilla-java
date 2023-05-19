@@ -15,7 +15,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class BookDirectoryTestSuite {
 
-    private List<Book> generateListOfNBooks(int booksQuantity){
+    private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<>();
         for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
@@ -77,14 +77,13 @@ class BookDirectoryTestSuite {
     @Test
     void testListBooksWithConditionFragmentShorterThan3() {
         // Given
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);            // [2]
-        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);               // [3]
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
         // When
-        List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");       // [4]
+        List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
 
         // Then
-        assertEquals(0, theListOfBooks10.size());                                     // [5]
+        assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
 
@@ -102,7 +101,6 @@ class BookDirectoryTestSuite {
     @Test
     public void testIfUserHasOneBook() {
         // Given
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser = new LibraryUser("AA", "BB", "123456");
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(List.of(new Book("Secrets of Alamo", "John Smith", 2008)));
