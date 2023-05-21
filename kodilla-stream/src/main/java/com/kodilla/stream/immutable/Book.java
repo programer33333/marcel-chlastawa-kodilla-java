@@ -13,6 +13,7 @@ public final class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
+
     public String getTitle() {
         return title;
     }
