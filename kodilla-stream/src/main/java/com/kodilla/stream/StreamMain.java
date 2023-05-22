@@ -14,10 +14,6 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
 
-    private static int calculateAge(LocalDate birthDate, LocalDate currentDate) {
-        return Period.between(birthDate, currentDate).getYears();
-    }
-
     public static void main(String[] args) {
         Forum theForum = new Forum();
 
@@ -25,7 +21,7 @@ public class StreamMain {
 
         Map<Integer, ForumUser> mapOfUsers = theForum.getUserList().stream()
                 .filter(n -> n.getSex() != 'F')
-                .filter(n -> calculateAge(n.getBirthDate(), currentDate) > 20)
+                .filter(n -> Period.between(n.getBirthDate(), currentDate).getYears() > 20)
                 .filter(n -> n.getPostsQuantity() >= 1)
                 .collect(Collectors.toMap(ForumUser::getId, n -> n));
 
