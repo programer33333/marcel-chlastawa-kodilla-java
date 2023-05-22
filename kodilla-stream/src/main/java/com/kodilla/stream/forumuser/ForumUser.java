@@ -1,6 +1,7 @@
 package com.kodilla.stream.forumuser;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public final class ForumUser {
@@ -30,8 +31,8 @@ public final class ForumUser {
         return sex;
     }
 
-    public int getBirthDate() {
-        return birthDate.getYear();
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     public int getPostsQuantity() {
