@@ -5,12 +5,15 @@ import java.util.stream.IntStream;
 public interface ArrayOperations {
     static double getAverage(int[] numbers) {
 
-        IntStream.range(0, numbers.length + 1)
-                .forEach(System.out::println);
+        IntStream.range(0, numbers.length)
+                .forEach(n -> System.out.println(numbers[n]));
 
-        double average = IntStream.range(1, numbers.length + 1)
-                .average()
-                .orElse(0);
+        double average = IntStream.range(0, numbers.length)
+                .mapToDouble(n -> numbers[n])
+                        .average()
+                                .orElse(0);
+
+
 
         System.out.println("Average: " + average);
 
