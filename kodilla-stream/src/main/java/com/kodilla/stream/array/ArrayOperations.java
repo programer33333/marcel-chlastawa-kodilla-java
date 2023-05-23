@@ -13,8 +13,6 @@ public interface ArrayOperations {
                         .average()
                                 .orElse(0);
 
-
-
         System.out.println("Average: " + average);
 
         return average;

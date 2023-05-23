@@ -26,5 +26,8 @@ public class StreamMain {
                 .collect(Collectors.toMap(ForumUser::getId, n -> n));
 
         System.out.println(mapOfUsers);
+
+        Mirror mirror = new Mirror("Kamil");
+        System.out.println(mirror.mirrorReflection());
     }
 }
