@@ -25,7 +25,11 @@ public class StreamMain {
 //
 //        System.out.println(mapOfUsers);
 
-        System.out.println(Mirror.mirrorReflection("Adam"));
+        String[] words = {"Adam", "Ewa", "Kajak"};
+        for (String input : words) {
+            String mirrored = Mirror.mirrorReflection(input);
+            System.out.println(mirrored);
+        }
 
     }
 }
