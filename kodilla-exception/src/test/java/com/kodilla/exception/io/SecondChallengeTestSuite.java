@@ -31,9 +31,7 @@ public class SecondChallengeTestSuite {
         double y = 1.0;
 
         // when & then
-        assertThrows(Exception.class, () -> {
-            secondChallenge.probablyIWillThrowException(x, y);
-        });
+        assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(x, y));
     }
 
     @Test
@@ -42,10 +40,8 @@ public class SecondChallengeTestSuite {
         double x = 1.0;
         double y = 1.5;
 
-        // when
-        assertThrows(Exception.class, () -> {
-            secondChallenge.probablyIWillThrowException(x, y);
-        });
+        // when & then
+        assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(x, y));
     }
 
     @Test
@@ -54,9 +50,7 @@ public class SecondChallengeTestSuite {
         double x = 2.0;
         double y = 1.5;
 
-        // when
-        assertThrows(Exception.class, () -> {
-            secondChallenge.probablyIWillThrowException(x, y);
-        });
+        // when & then
+        assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(x, y));
     }
 }
