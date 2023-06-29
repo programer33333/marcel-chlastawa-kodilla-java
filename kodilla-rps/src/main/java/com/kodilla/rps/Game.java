@@ -19,6 +19,7 @@ public class Game {
 
         System.out.println(name + " enter the number of points to win:");
         pointsQuantity = scanner.nextInt();
+        scanner.nextLine();
 
         System.out.println("We play to " + pointsQuantity + " points. \n" +
                 "key 1 = stone, \n" +
@@ -32,16 +33,16 @@ public class Game {
         while (!end) {
             System.out.println("Enter your move:");
             String input = scanner.nextLine();
+            System.out.println(input);
 
-            int percentage = random.nextInt(3);
+            int opponentMove = random.nextInt(3);
 
-            if (input.equals("1")) {
-                handleMove("stone", percentage);
-            } else if (input.equals("2")) {
-                handleMove("paper", percentage);
-            } else if (input.equals("3")) {
-                handleMove("scissors", percentage);
+            switch (input) {
+                case "1" -> handleMove("stone", opponentMove);
+                case "2" -> handleMove("paper", opponentMove);
+                case "3" -> handleMove("scissors", opponentMove);
             }
+            showPoints();
 
             if (input.equals("n")) {
                 System.out.println("Are you sure to reset the points? y/n:");
@@ -92,17 +93,14 @@ public class Game {
 
         if (userMove.equals(computerMoveName)) {
             System.out.println("Same figure, go again!");
-            showPoints();
         } else if ((userMove.equals("stone") && computerMoveName.equals("scissors")) ||
                 (userMove.equals("paper") && computerMoveName.equals("stone")) ||
                 (userMove.equals("scissors") && computerMoveName.equals("paper"))) {
             userPointsQuantity++;
             System.out.println(userMove + " wins with " + computerMoveName);
-            showPoints();
         } else {
             computerPointsQuantity++;
             System.out.println(userMove + " loses with " + computerMoveName);
-            showPoints();
         }
     }
 
