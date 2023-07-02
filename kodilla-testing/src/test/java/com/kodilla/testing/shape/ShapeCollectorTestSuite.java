@@ -111,7 +111,7 @@ public class ShapeCollectorTestSuite {
             ArrayList<Shape> shapeList= new ArrayList<>();
             shapeList.add(shape);
             //When
-            List<Shape> shapeResultList = object.getShapeList();
+            List<Shape> shapeResultList = object.showFigures();
             //Then
             Assertions.assertEquals(shapeList.toString(), shapeResultList.toString());
         }

@@ -1,0 +1,34 @@
+package com.kodilla.good.patterns.challenges;
+
+import java.time.LocalDate;
+
+public class OrderRequest {
+
+    private User user;
+    private LocalDate timeOfOrder;
+    private int quantity;
+    private Product product;
+
+    public OrderRequest(User user, LocalDate timeOfOrder, int quantity, Product product) {
+        this.user = user;
+        this.timeOfOrder = timeOfOrder;
+        this.quantity = quantity;
+        this.product = product;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public LocalDate getTimeOfOrder() {
+        return timeOfOrder;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+}
