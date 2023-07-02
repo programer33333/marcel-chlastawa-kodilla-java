@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface OrderRepository {
 
-    List<OrderRequest> saveOrder(OrderRequest order);
+    List<Order> saveOrder(Order order);
 }
