@@ -15,8 +15,8 @@ public class OrderProcessor {
     }
 
     public void process(final OrderRequest order) {
-         orderService.createOrder(order.getTimeOfOrder(), order.getUser(), order.getQuantity(), order.getProduct());
-         informationService.inform(order.getUser());
-         orderRepository.saveOrder(order);
+        orderService.createOrder(order.getTimeOfOrder(), order.getUser(), order.getQuantity(), order.getProduct());
+        informationService.inform(order.getUser());
+        orderRepository.saveOrder(order);
     }
 }
