@@ -22,16 +22,16 @@ public class TaskListDaoTestSuite {
         //Given
         TaskList taskList = new TaskList(NAME, DESCRIPTION);
         taskListDao.save(taskList);
-        String name = taskList.getListName();
+        String listName = taskList.getListName();
 
         //When
-        List<TaskList> readTasks = taskListDao.findByName(name);
+        List<TaskList> readList = taskListDao.findByListName(listName);
 
         //Then
-        assertEquals(1, readTasks.size());
+        assertEquals(1, readList.size());
 
         //CleanUp
-        int id = readTasks.get(0).getId();
+        int id = readList.get(0).getId();
         taskListDao.deleteById(id);
     }
 }
