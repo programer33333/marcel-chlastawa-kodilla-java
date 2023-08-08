@@ -3,14 +3,17 @@ package com.kodilla.hibernate.invoice;
 import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
-@Table(name = "PRODUCTS")
+@Table(name = "products")
 public class Product {
 
     private int id;
     private String name;
-    private Item item;
+    private List<Item> item = new ArrayList<>();
 
     public Product() {
     }
@@ -22,7 +25,7 @@ public class Product {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name="ID", unique=true)
+    @Column(name="id", unique=true)
     public int getId() {
         return id;
     }
@@ -32,7 +35,7 @@ public class Product {
     }
 
     @NotNull
-    @Column(name = "PRODUCT_NAME")
+    @Column(name = "product name")
     public String getName() {
         return name;
     }
@@ -40,13 +43,18 @@ public class Product {
     private void setName(String name) {
         this.name = name;
     }
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID")
-    public Item getItem() {
+
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "product",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    public List<Item> getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(List<Item> item) {
         this.item = item;
     }
 }

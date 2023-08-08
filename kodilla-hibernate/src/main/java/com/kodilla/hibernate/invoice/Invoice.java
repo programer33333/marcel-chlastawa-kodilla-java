@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "INVOICES")
+@Table(name = "invoices")
 public class Invoice {
 
     private int id;
@@ -24,7 +24,7 @@ public class Invoice {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ID", unique = true)
+    @Column(name = "id", unique = true)
     public int getId() {
         return id;
     }
@@ -34,7 +34,7 @@ public class Invoice {
     }
 
     @NotNull
-    @Column(name = "NUMBER")
+    @Column(name = "number")
     public String getNumber() {
         return number;
     }
@@ -42,6 +42,7 @@ public class Invoice {
     private void setNumber(String number) {
         this.number = number;
     }
+
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "invoice",

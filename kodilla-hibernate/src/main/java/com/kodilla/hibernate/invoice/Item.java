@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "ITEMS")
+@Table(name = "items")
 public class Item {
 
     private int id;
@@ -28,7 +28,7 @@ public class Item {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ID", unique = true)
+    @Column(name = "id", unique = true)
     public int getId() {
         return id;
     }
@@ -37,8 +37,8 @@ public class Item {
         this.id = id;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id")
+    @ManyToOne
+    @JoinColumn(name = "product id")
     public Product getProduct() {
         return product;
     }
@@ -48,7 +48,7 @@ public class Item {
     }
 
     @NotNull
-    @Column(name = "PRICE")
+    @Column(name = "price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -58,7 +58,7 @@ public class Item {
     }
 
     @NotNull
-    @Column(name = "QUANTITY")
+    @Column(name = "quantity")
     public int getQuantity() {
         return quantity;
     }
@@ -67,7 +67,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    @Column(name = "VALUE")
+    @Column(name = "value")
     public BigDecimal getValue() {
         return value = price.multiply(new BigDecimal(quantity));
     }
@@ -76,8 +76,8 @@ public class Item {
         this.value = value;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "ID_item")
+    @ManyToOne(cascade =  CascadeType.ALL)
+    @JoinColumn(name = "invoice id")
     public Invoice getInvoice() {
         return invoice;
     }
