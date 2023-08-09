@@ -2,7 +2,7 @@ package com.kodilla.hibernate.tasklist;
 
 import com.kodilla.hibernate.task.Task;
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +26,13 @@ public class TaskList {
 
     @Id
     @GeneratedValue
-    @NotNull
+
     @Column(name="ID", unique=true)
     public int getId() {
         return id;
     }
 
-    @NotNull
+
     @Column(name = "LISTNAME")
     public String getListName() {
         return listName;

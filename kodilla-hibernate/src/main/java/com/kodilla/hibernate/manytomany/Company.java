@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+
 
 
 import java.util.ArrayList;
@@ -24,13 +24,13 @@ public class Company {
 
     @Id
     @GeneratedValue
-    @NotNull
+
     @Column(name = "COMPANY_ID", unique = true)
     public int getId() {
         return id;
     }
 
-    @NotNull
+
     @Column(name = "COMPANY_NAME")
     public String getName() {
         return name;

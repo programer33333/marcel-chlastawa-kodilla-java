@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.invoice;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,6 @@ public class Product {
         this.id = id;
     }
 
-    @NotNull
     @Column(name = "product name")
     public String getName() {
         return name;

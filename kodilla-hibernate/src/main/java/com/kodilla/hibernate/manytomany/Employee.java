@@ -2,7 +2,7 @@ package com.kodilla.hibernate.manytomany;
 
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+
 
 
 import java.util.ArrayList;
@@ -27,19 +27,19 @@ public class Employee {
 
     @Id
     @GeneratedValue
-    @NotNull
+
     @Column(name = "EMPLOYEE_ID", unique = true)
     public int getId() {
         return id;
     }
 
-    @NotNull
+
     @Column(name = "FIRSTNAME")
     public String getFirstname() {
         return firstname;
     }
 
-    @NotNull
+
     @Column(name = "LASTNAME")
     public String getLastname() {
         return lastname;

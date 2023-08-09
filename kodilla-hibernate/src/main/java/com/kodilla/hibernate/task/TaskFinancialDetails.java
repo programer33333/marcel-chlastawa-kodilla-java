@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.task;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+
 
 import java.math.BigDecimal;
 
@@ -22,7 +22,7 @@ public class TaskFinancialDetails {
 
     @Id
     @GeneratedValue
-    @NotNull
+
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;

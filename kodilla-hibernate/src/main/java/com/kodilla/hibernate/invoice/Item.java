@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.invoice;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
@@ -47,7 +47,6 @@ public class Item {
         this.product = product;
     }
 
-    @NotNull
     @Column(name = "price")
     public BigDecimal getPrice() {
         return price;
@@ -57,7 +56,7 @@ public class Item {
         this.price = price;
     }
 
-    @NotNull
+
     @Column(name = "quantity")
     public int getQuantity() {
         return quantity;
