@@ -2,7 +2,6 @@ package com.kodilla.hibernate.task;
 
 import jakarta.persistence.*;
 
-
 import java.math.BigDecimal;
 
 @Entity
