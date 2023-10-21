@@ -11,7 +11,12 @@ public class SudokuBoard {
     }
 
     public void setElementValue(int row, int col, int value) {
-        rows[row].setElementValue(col, value);
+        if (value >= 1 && value <= 9 && isValidMove(row, col, value)) {
+            rows[row].setElementValue(col, value);
+        } else {
+            System.out.println("Wrong value, try again:");
+        }
+
     }
 
     public boolean solveSudoku() {

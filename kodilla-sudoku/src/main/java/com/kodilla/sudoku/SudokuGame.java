@@ -13,7 +13,7 @@ public class SudokuGame {
         System.out.println("        S U D O K U");
 
         // Data input
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i <= 81; i++) {
             System.out.println(board.toString());
             System.out.print("Type in order: column, row, value (separated by commas) or 'Sudoku' to solve the sudoku: ");
             String input = readInput();
