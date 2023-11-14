@@ -16,6 +16,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    testImplementation 'org.seleniumhq.webdriver:webdriver-chrome:0.9.7376'
 }
 
 test {

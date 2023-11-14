@@ -19,6 +19,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation project(path: ':kodilla-testing')
+    testImplementation 'org.seleniumhq.webdriver:webdriver-chrome:0.9.7376'
 }
 
 tasks.named('test') {
